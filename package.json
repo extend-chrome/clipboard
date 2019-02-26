@@ -1,0 +1,38 @@
+{
+  "name": "@bumble/rollup-starter",
+  "version": "0.0.1",
+  "description": "Get started quick with a preconfigured Rollup kit.",
+  "main": "build/bundle-cjs.js",
+  "module": "build/bundle-esm.js",
+  "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "eslint": "^5.11.0",
+    "jest": "^24.1.0",
+    "rollup": "^0.68.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-sucrase": "^2.1.0",
+    "sinon-chrome": "^2.3.2",
+    "sucrase": "^3.9.5"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "jest",
+    "postversion": "git push && npm publish"
+  },
+  "jest": {
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    },
+    "setupFilesAfterEnv": [
+      "./tests/jest.setup.js"
+    ]
+  },
+  "files": [
+    "build"
+  ]
+}
