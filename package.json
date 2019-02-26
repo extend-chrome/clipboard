@@ -1,7 +1,7 @@
 {
-  "name": "@bumble/rollup-starter",
-  "version": "0.0.1",
-  "description": "Get started quick with a preconfigured Rollup kit.",
+  "name": "@bumble/clipboard",
+  "version": "0.1.0",
+  "description": "Use the clipboard with ease in Chrome extensions.",
   "main": "build/bundle-cjs.js",
   "module": "build/bundle-esm.js",
   "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
@@ -34,5 +34,9 @@
   },
   "files": [
     "build"
-  ]
+  ],
+  "dependencies": {
+    "@bumble/chrome": "0.0.1",
+    "@bumble/stream": "^0.2.1"
+  }
 }
