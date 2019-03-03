@@ -6,6 +6,7 @@
   "module": "build/bundle-esm.js",
   "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
   "license": "MIT",
+  "repository": "bumble-org/clipboard",
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
     "eslint": "^5.11.0",

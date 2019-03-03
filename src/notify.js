@@ -24,10 +24,11 @@ export const notifyCopy = txt => {
     .then(handleBtnClick(txt))
 }
 
-const handleBtnClick = txt => noteId => {
+const handleBtnClick = txt => ({ id }) => {
   listenTo(chrome.notifications.onButtonClicked)
     .forEach(log('onButtonClicked'))
-    .filter(({ id }) => id === noteId)
+    .filter(noteId => noteId === id)
+    .forEach(log('after filter'))
     .map(() => writeText(txt)) // have it copy to clipboard again
     .clear(() => true) //remove callback
     .catch(error('handleBtnClick'))

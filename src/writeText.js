@@ -10,6 +10,6 @@ export const writeText = str => {
   el.remove()
 
   return success
-    ? Promise.resolve()
+    ? Promise.resolve(str)
     : Promise.reject('Unable to write to clipboard')
 }
