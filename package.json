@@ -34,7 +34,6 @@
     "build"
   ],
   "dependencies": {
-    "@bumble/notify": "^0.1.0",
-    "@bumble/stream": "^0.2.2"
+    "@bumble/notify": "^0.1.0"
   }
 }
