@@ -19,7 +19,7 @@ export default [
         sourcemap: 'inline',
       },
     ],
-    external: ['@bumble/stream', '@bumble/chrome'],
+    external: ['@bumble/notify'],
     // plugins: [resolve(), commonjs(), json()],
   },
 ]
