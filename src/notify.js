@@ -1,35 +1,12 @@
-import { notify } from '@bumble/chrome'
-import { listenTo, error, log } from '@bumble/stream'
 import { writeText } from './writeText'
+import notify from '@bumble/notify'
 
 export const notifyCopy = txt => {
   const btnTitle = 'copy again'
-  const { name, icons = {} } = chrome.runtime.getManifest()
-  const iconUrl =
-    icons[
-      Object.keys(icons)
-        .map(s => parseInt(s))
-        .reduce((r, x) => (r > x ? r : x), 0)
-        .toString()
-    ]
-
-  return notify
-    .create({
-      type: 'basic',
-      title: name,
-      message: `"${txt}" was copied to the clipboard.`,
-      iconUrl,
-      buttons: [{ title: btnTitle }],
-    })
-    .then(handleBtnClick(txt))
-}
-
-const handleBtnClick = txt => ({ id }) => {
-  listenTo(chrome.notifications.onButtonClicked)
-    .forEach(log('onButtonClicked'))
-    .filter(noteId => noteId === id)
-    .forEach(log('after filter'))
-    .map(() => writeText(txt)) // have it copy to clipboard again
-    .clear(() => true) //remove callback
-    .catch(error('handleBtnClick'))
+  return notify.create({
+    message: `"${txt}" was copied to the clipboard.`,
+    buttons: [
+      { title: btnTitle, onClick: () => writeText(txt) },
+    ],
+  })
 }

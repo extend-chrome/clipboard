@@ -34,7 +34,7 @@
     "build"
   ],
   "dependencies": {
-    "@bumble/chrome": "^0.1.1",
+    "@bumble/notify": "^0.1.0",
     "@bumble/stream": "^0.2.2"
   }
 }
