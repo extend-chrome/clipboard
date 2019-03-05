@@ -34,6 +34,6 @@
     "build"
   ],
   "dependencies": {
-    "@bumble/notify": "^0.1.0"
+    "@bumble/notify": "^0.1.1"
   }
 }
