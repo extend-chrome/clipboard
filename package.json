@@ -1,6 +1,6 @@
 {
   "name": "@bumble/clipboard",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Use the clipboard with ease in Chrome extensions.",
   "main": "build/bundle-cjs.js",
   "module": "build/bundle-esm.js",
