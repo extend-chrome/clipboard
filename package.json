@@ -9,11 +9,11 @@
   "repository": "bumble-org/clipboard",
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
-    "eslint": "^5.11.0",
-    "jest": "^24.1.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
     "rollup": "^0.68.0",
     "sinon-chrome": "^2.3.2",
-    "sucrase": "^3.9.5"
+    "sucrase": "^3.10.1"
   },
   "scripts": {
     "build": "rollup -c",
