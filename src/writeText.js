@@ -11,5 +11,5 @@ export const writeText = str => {
 
   return success
     ? Promise.resolve(str)
-    : Promise.reject('Unable to write to clipboard')
+    : Promise.reject(new Error('Unable to write to clipboard'))
 }

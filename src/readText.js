@@ -15,5 +15,5 @@ export const readText = () => {
   // Resolve with the contents of the clipboard
   return success
     ? Promise.resolve(text)
-    : Promise.reject('Unable to read from clipboard')
+    : Promise.reject(new Error('Unable to read from clipboard'))
 }
