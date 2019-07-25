@@ -30,6 +30,8 @@ export namespace clipboard {
 /**
  * Write text to the clipboard, then create a copy notification.
  *
+ * > This feature requires the `"notifications"` [permission](https://developer.chrome.com/extensions/declare_permissions) in your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
+ *
  * ```javascript
  * clipboard.writeText('copy this')
  *   .then(notifyCopy)
