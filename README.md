@@ -8,13 +8,12 @@
 <div align="center">
 
 [![npm (scoped)](https://img.shields.io/npm/v/@bumble/clipboard.svg)](https://www.npmjs.com/package/@bumble/clipboard)
-[![GitHub Issues](https://img.shields.io/github/issues-raw/bumble-org/clipboard.svg)](https://github.com/@bumble/clipboard/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/bumble-org/clipboard.svg)](https://github.com/@bumble/clipboard/pulls)
-[![GitHub Contributors](https://img.shields.io/github/contributors/bumble-org/clipboard.svg)](https://github.com/bumble-org/clipboard/graphs/contributors)
 [![GitHub last commit](https://img.shields.io/github/last-commit/bumble-org/clipboard.svg)](https://github.com/bumble-org/clipboard)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/bumble-org/clipboard.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/bumble-org/clipboard/stargazers/)
+[![TypeScript Declarations Included](https://img.shields.io/badge/types-TypeScript-informational)](#typescript)
 
+[![Fiverr: We make Chrome extensions](https://img.shields.io/badge/Fiverr%20-We%20make%20Chrome%20extensions-brightgreen.svg)](https://www.fiverr.com/jacksteam)
+[![ko-fi](https://img.shields.io/badge/ko--fi-Buy%20me%20a%20coffee-ff5d5b)](https://ko-fi.com/K3K1QNTF)
 </div>
 
 ---
@@ -25,7 +24,7 @@ Using the clipboard in a Chrome Extension can be a pain. This extension emulates
 
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Extra Features](#extras)
+- [Features](#features)
 
 ## Getting started <a name = "getting_started"></a>
 
@@ -59,7 +58,11 @@ clipboard.writeText('write this to the clipboard')
 
 > Although this library works without any extra [permissions](https://developer.chrome.com/extensions/declare_permissions), it would be polite to your users to declare the `"clipboardRead"` and `"clipboardWrite"` permissions in your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
 
-## Extra Features <a name = "extras"></a>
+## Features <a name = "features"></a>
+
+### TypeScript Definitions <a name = "typescript"></a>
+
+TypeScript definitions are included, so no need to install an additional `@types` library!
 
 ### Notify on Copy
 
@@ -69,7 +72,6 @@ This library contains an extra function that creates a desktop notification when
 
 It uses [`@bumble/notify`](https://github.com/bumble-org/notify), a Chrome extension notification library with a simpler API than [`chrome.notifications`](https://developer.chrome.com/extensions/notifications).
 
-### Usage
 
 ```javascript
 import { clipboard, notifyCopy } from '@bumble/clipboard'
@@ -86,5 +88,3 @@ clipboard.writeText('copy this')
 <!-- ## Recipe
 
 Use this Chrome extension repo as a starting place! -->
-
-<!-- ![Fiverr Gig: I will make you a Chrome extension](https://img.shields.io/badge/Fiverr%20Gig-I%20will%20make%20you%20a%20Chrome%20extension-brightgreen.svg) -->
