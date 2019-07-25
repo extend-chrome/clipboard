@@ -1,25 +1,20 @@
 /* eslint-env node */
 
-// import resolve from 'rollup-plugin-node-resolve'
-// import commonjs from 'rollup-plugin-commonjs'
-// import json from 'rollup-plugin-json'
-
 export default [
   {
     input: 'src/index.js',
     output: [
       {
-        file: 'build/bundle-esm.js',
+        file: 'lib/bumble-clipboard-esm.js',
         format: 'esm',
         sourcemap: 'inline',
       },
       {
-        file: 'build/bundle-cjs.js',
+        file: 'lib/bumble-clipboard-cjs.js',
         format: 'cjs',
         sourcemap: 'inline',
       },
     ],
     external: ['@bumble/notify'],
-    // plugins: [resolve(), commonjs(), json()],
   },
 ]

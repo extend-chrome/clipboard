@@ -2,19 +2,16 @@
   "name": "@bumble/clipboard",
   "version": "1.0.0",
   "description": "Use the clipboard with ease in Chrome extensions.",
-  "main": "build/bundle-cjs.js",
-  "module": "build/bundle-esm.js",
-  "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
-  "license": "MIT",
   "repository": "bumble-org/clipboard",
-  "devDependencies": {
-    "@sucrase/jest-plugin": "^2.0.0",
-    "eslint": "^5.16.0",
-    "jest": "^24.8.0",
-    "rollup": "^0.68.0",
-    "sinon-chrome": "^2.3.2",
-    "sucrase": "^3.10.1"
-  },
+  "license": "MIT",
+  "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
+  "files": [
+    "lib",
+    "index.d.ts"
+  ],
+  "main": "lib/bumble-clipboard-cjs.js",
+  "module": "lib/bumble-clipboard-esm.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
@@ -23,17 +20,22 @@
     "postversion": "git push && npm publish"
   },
   "jest": {
-    "transform": {
-      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
-    },
     "setupFilesAfterEnv": [
       "./tests/jest.setup.js"
-    ]
+    ],
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    }
   },
-  "files": [
-    "build"
-  ],
   "dependencies": {
     "@bumble/notify": "^0.1.1"
+  },
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
+    "rollup": "^0.68.0",
+    "sinon-chrome": "^2.3.2",
+    "sucrase": "^3.10.1"
   }
 }
