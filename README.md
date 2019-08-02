@@ -18,7 +18,7 @@
 
 ---
 
-Using the clipboard in a Chrome Extension can be a pain. This extension emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods without requiring extra permissions.
+Using the clipboard in a Chrome Extension can be a pain. This extension emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods.
 
 ## Table of Contents
 
@@ -38,6 +38,14 @@ See [`rollup-plugin-chrome-extension`](https://github.com/bumble-org/rollup-plug
 $ npm i @bumble/clipboard
 ```
 
+Add the [permissions](https://developer.chrome.com/extensions/declare_permissions) `"clipboardRead"` and/or `"clipboardWrite"` to your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
+
+```json
+{
+  "permissions": ["clipboardRead", "clipboardWrite"]
+}
+```
+
 ## Usage <a name = "usage"></a>
 
 ```javascript
@@ -55,8 +63,6 @@ clipboard.writeText('write this to the clipboard')
     console.log(text, 'was written to the clipboard')
   })
 ```
-
-> Although this library works without any extra [permissions](https://developer.chrome.com/extensions/declare_permissions), it would be polite to your users to declare the `"clipboardRead"` and `"clipboardWrite"` permissions in your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
 
 ## Features <a name = "features"></a>
 
