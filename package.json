@@ -1,6 +1,6 @@
 {
   "name": "@bumble/clipboard",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Use the clipboard with ease in Chrome extensions.",
   "repository": "bumble-org/clipboard",
   "license": "MIT",
