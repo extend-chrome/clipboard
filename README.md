@@ -18,7 +18,7 @@
 
 ---
 
-Using the clipboard in a Chrome Extension can be a pain. This extension emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods.
+Using the clipboard in a Chrome Extension can be a pain. The async Clipboard API [doesn't work in background scripts](https://bugs.chromium.org/p/chromium/issues/detail?id=874848&can=1&q=chrome%20extension%20clipboard%20api&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) and workarounds require lots of boilerplate. This library works in all Chrome extension contexts. It emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods.
 
 ## Table of Contents
 
