@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://github.com/bumble-org/clipboard" rel="noopener">
- <img width=200px height=200px src="https://imgur.com/Cr9s4h0.png" alt="@bumble/clipboard logo"></a>
+  <a href="https://github.com/extend-chrome/clipboard" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/Pw8LMCb.png" alt="@extend-chrome/clipboard"></a>
 </p>
 
-<h3 align="center">@bumble/clipboard</h3>
+<h3 align="center">@extend-chrome/clipboard</h3>
 
 <div align="center">
 
-[![npm (scoped)](https://img.shields.io/npm/v/@bumble/clipboard.svg)](https://www.npmjs.com/package/@bumble/clipboard)
-[![GitHub last commit](https://img.shields.io/github/last-commit/bumble-org/clipboard.svg)](https://github.com/bumble-org/clipboard)
+[![npm (scoped)](https://img.shields.io/npm/v/@extend-chrome/clipboard.svg)](https://www.npmjs.com/package/@extend-chrome/clipboard)
+[![GitHub last commit](https://img.shields.io/github/last-commit/extend-chrome/clipboard.svg)](https://github.com/extend-chrome/clipboard)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![TypeScript Declarations Included](https://img.shields.io/badge/types-TypeScript-informational)](#typescript)
 
@@ -30,15 +30,15 @@ Using the clipboard in a Chrome Extension can be a pain. The async Clipboard API
 
 You will need to use a bundler like [Rollup](https://rollupjs.org/guide/en/) or Webpack to include this library in the build of Chrome extension. 
 
-See [`rollup-plugin-chrome-extension`](https://github.com/bumble-org/rollup-plugin-chrome-extension) for an easy way use Rollup to build your Chrome extension!
+See [`rollup-plugin-chrome-extension`](https://github.com/extend-chrome/rollup-plugin-chrome-extension) for an easy way use Rollup to build your Chrome extension!
 
 ### Installation
 
 ```sh
-$ npm i @bumble/clipboard
+$ npm i @extend-chrome/clipboard
 ```
 
-Add the [permissions](https://developer.chrome.com/extensions/declare_permissions) `"clipboardRead"` and/or `"clipboardWrite"` to your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
+Add the [permissions](https://developer.chrome.com/extensions/declare_permissions) `"clipboardRead"` and/or `"clipboardWrite"` to your [`manifest.json`](https://developer.chrome.com/extensions/manifest). Remember, only request the permissions you need! For example, if your extension only reads the clipboard, only request `"clipboardRead"`.
 
 ```json
 {
@@ -49,7 +49,7 @@ Add the [permissions](https://developer.chrome.com/extensions/declare_permission
 ## Usage <a name = "usage"></a>
 
 ```javascript
-import { clipboard } from '@bumble/clipboard'
+import { clipboard } from '@extend-chrome/clipboard'
 
 // Read text from the clipboard, or "paste"
 clipboard.readText()
@@ -76,11 +76,11 @@ This library contains an extra function that creates a desktop notification when
 
 > This feature requires the `"notifications"` [permission](https://developer.chrome.com/extensions/declare_permissions) in your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
 
-It uses [`@bumble/notify`](https://github.com/bumble-org/notify), a Chrome extension notification library with a simpler API than [`chrome.notifications`](https://developer.chrome.com/extensions/notifications).
+It uses [`@extend-chrome/notify`](https://github.com/extend-chrome/notify), a Chrome extension notification library with a simpler API than [`chrome.notifications`](https://developer.chrome.com/extensions/notifications).
 
 
 ```javascript
-import { clipboard, notifyCopy } from '@bumble/clipboard'
+import { clipboard, notifyCopy } from '@extend-chrome/clipboard'
 
 // Write text to the clipboard
 clipboard.writeText('copy this')

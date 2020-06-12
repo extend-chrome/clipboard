@@ -1,20 +1,22 @@
 /* eslint-env node */
 
+const { main, module, dependencies } = require("./package.json");
+
 export default [
   {
-    input: 'src/index.js',
+    input: "src/index.js",
     output: [
       {
-        file: 'lib/bumble-clipboard-esm.js',
-        format: 'esm',
-        sourcemap: 'inline',
+        file: module,
+        format: "esm",
+        sourcemap: "inline",
       },
       {
-        file: 'lib/bumble-clipboard-cjs.js',
-        format: 'cjs',
-        sourcemap: 'inline',
+        file: main,
+        format: "cjs",
+        sourcemap: "inline",
       },
     ],
-    external: ['@bumble/notify'],
+    external: Object.keys(dependencies),
   },
-]
+];

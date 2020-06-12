@@ -1,5 +1,5 @@
 import { writeText } from './writeText'
-import { notify } from '@bumble/notify'
+import { notify } from '@extend-chrome/notify'
 
 export const notifyCopy = (txt) => {
   const btnTitle = 'copy again'

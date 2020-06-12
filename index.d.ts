@@ -1,5 +1,5 @@
-// Type definitions for @bumble/clipboard
-// Definitions by: Jack and Amy Steam <https://jackandamy.rocks>
+// Type definitions for @extend-chrome/clipboard
+// Definitions by: Jack and Amy Steam <https://jackandamydev.com>
 
 export namespace clipboard {
   /**
