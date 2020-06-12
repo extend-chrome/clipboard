@@ -1,16 +1,16 @@
 {
-  "name": "@bumble/clipboard",
+  "name": "@extend-chrome/clipboard",
   "version": "1.0.5",
   "description": "Use the clipboard with ease in Chrome extensions.",
-  "repository": "bumble-org/clipboard",
+  "repository": "github:extend-chrome/clipboard",
   "license": "MIT",
   "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
   "files": [
     "lib",
     "index.d.ts"
   ],
-  "main": "lib/bumble-clipboard-cjs.js",
-  "module": "lib/bumble-clipboard-esm.js",
+  "main": "lib/index-cjs.js",
+  "module": "lib/index-esm.js",
   "types": "index.d.ts",
   "scripts": {
     "build": "rollup -c",
@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "@bumble/notify": "^1.0.2"
+    "@extend-chrome/notify": "^1.1.2"
   },
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
