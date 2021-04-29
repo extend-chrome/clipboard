@@ -1,4 +1,4 @@
-export const writeText = str => {
+export const writeText = (str) => {
   // Create hidden input with text
   const el = document.createElement('textarea')
   el.value = str
