@@ -16,8 +16,8 @@
     "build:lib": "rollup -c",
     "build:types": "tsc --project tsconfig.types.json",
     "start": "rollup -c -w",
-    "release": "pnpm run build && git push && pnpx np && pnpm cleanup",
-    "cleanup": "rm -rf node_modules & pnpm i"
+    "release": "pnpm run build && pnpx np && git push && pnpm cleanup",
+    "cleanup": "rm -rf node_modules package-lock.json && pnpm i"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.1",
