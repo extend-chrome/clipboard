@@ -33,7 +33,7 @@ Using the clipboard in a Chrome Extension can be a pain. The async Clipboard API
 
 ## Getting started <a name = "getting_started"></a>
 
-You will need to use a bundler like [Rollup](https://rollupjs.org/guide/en/) or Webpack to include this library in the build of Chrome extension. 
+You will need to use a bundler like [Rollup](https://rollupjs.org/guide/en/) or Webpack to include this library in the build of Chrome extension.
 
 See [`rollup-plugin-chrome-extension`](https://github.com/extend-chrome/rollup-plugin-chrome-extension) for an easy way use Rollup to build your Chrome extension!
 
@@ -57,16 +57,14 @@ Add the [permissions](https://developer.chrome.com/extensions/declare_permission
 import { clipboard } from '@extend-chrome/clipboard'
 
 // Read text from the clipboard, or "paste"
-clipboard.readText()
-  .then((text) => {
-    console.log('clipboard contents', text)
-  })
+clipboard.readText().then((text) => {
+  console.log('clipboard contents', text)
+})
 
 // Write text to the clipboard, or "copy"
-clipboard.writeText('write this to the clipboard')
-  .then((text) => {
-    console.log(text, 'was written to the clipboard')
-  })
+clipboard.writeText('write this to the clipboard').then((text) => {
+  console.log(text, 'was written to the clipboard')
+})
 ```
 
 ## Features <a name = "features"></a>
@@ -74,28 +72,3 @@ clipboard.writeText('write this to the clipboard')
 ### TypeScript Definitions <a name = "typescript"></a>
 
 TypeScript definitions are included, so no need to install an additional `@types` library!
-
-### Notify on Copy
-
-This library contains an extra function that creates a desktop notification when text has been copied, with a button to copy that text again.
-
-> This feature requires the `"notifications"` [permission](https://developer.chrome.com/extensions/declare_permissions) in your [`manifest.json`](https://developer.chrome.com/extensions/manifest).
-
-It uses [`@extend-chrome/notify`](https://github.com/extend-chrome/notify), a Chrome extension notification library with a simpler API than [`chrome.notifications`](https://developer.chrome.com/extensions/notifications).
-
-
-```javascript
-import { clipboard, notifyCopy } from '@extend-chrome/clipboard'
-
-// Write text to the clipboard
-clipboard.writeText('copy this')
-  // then create a copy notification
-  .then(notifyCopy)
-```
-
-<!-- TODO: screen shot of notification -->
-
-<!-- TODO: example repo using lib -->
-<!-- ## Recipe
-
-Use this Chrome extension repo as a starting place! -->

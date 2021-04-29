@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2020", "dom"],
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2020"
+  }
+}

@@ -6,34 +6,27 @@
   "license": "MIT",
   "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
   "files": [
-    "lib",
-    "index.d.ts"
+    "lib"
   ],
   "main": "lib/index-cjs.js",
   "module": "lib/index-esm.js",
-  "types": "index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "run-p build:*",
+    "build:lib": "rollup -c",
+    "build:types": "tsc --project tsconfig.types.json",
     "start": "rollup -c -w",
-    "test": "jest",
-    "preversion": "npm run build",
-    "postversion": "git push && npm publish"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./tests/jest.setup.js"
-    ],
-    "transform": {
-      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
-    }
+    "preversion": "pnpm run build",
+    "postversion": "git push && pnpx np && pnpm cleanup",
+    "cleanup": "rm -rf node_modules & pnpm i"
   },
   "devDependencies": {
-    "@sucrase/jest-plugin": "^2.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
     "eslint": "^5.16.0",
-    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "rollup": "^0.68.0",
-    "sinon-chrome": "^2.3.2",
-    "sucrase": "^3.10.1"
+    "rollup": "^2.46.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
   }
 }
