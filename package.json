@@ -16,8 +16,7 @@
     "build:lib": "rollup -c",
     "build:types": "tsc --project tsconfig.types.json",
     "start": "rollup -c -w",
-    "preversion": "pnpm run build",
-    "postversion": "git push && pnpx np && pnpm cleanup",
+    "release": "pnpm run build && git push && pnpx np && pnpm cleanup",
     "cleanup": "rm -rf node_modules & pnpm i"
   },
   "devDependencies": {
