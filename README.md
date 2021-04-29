@@ -23,13 +23,12 @@
 
 ---
 
-Using the clipboard in a Chrome Extension can be a pain. The async Clipboard API [doesn't work in background scripts](https://bugs.chromium.org/p/chromium/issues/detail?id=874848&can=1&q=chrome%20extension%20clipboard%20api&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) and workarounds require lots of boilerplate. This library works in all Chrome extension contexts. It emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods.
+Using the clipboard in a Chrome Extension can be a pain. The async Clipboard API [doesn't work in background scripts](https://bugs.chromium.org/p/chromium/issues/detail?id=874848&can=1&q=chrome%20extension%20clipboard%20api&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified) and workarounds require lots of boilerplate. This library works in all MV2 Chrome extension contexts. It emulates the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) `readText` and `writeText` methods using `document.execCommand`.
 
 ## Table of Contents
 
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Features](#features)
 
 ## Getting started <a name = "getting_started"></a>
 
@@ -51,6 +50,10 @@ Add the [permissions](https://developer.chrome.com/extensions/declare_permission
 }
 ```
 
+### TypeScript Definitions <a name = "typescript"></a>
+
+TypeScript definitions are included, so no need to install an additional `@types` library!
+
 ## Usage <a name = "usage"></a>
 
 ```javascript
@@ -66,9 +69,3 @@ clipboard.writeText('write this to the clipboard').then((text) => {
   console.log(text, 'was written to the clipboard')
 })
 ```
-
-## Features <a name = "features"></a>
-
-### TypeScript Definitions <a name = "typescript"></a>
-
-TypeScript definitions are included, so no need to install an additional `@types` library!
