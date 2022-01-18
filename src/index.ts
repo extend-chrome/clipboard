@@ -13,7 +13,7 @@ const readText = (): Promise<string> =>
     const text = el.value
     el.remove()
 
-    if (success) reject(new Error('Unable to read from clipboard'))
+    if (!success) reject(new Error('Unable to read from clipboard'))
 
     // Resolve with the contents of the clipboard
     resolve(text)
